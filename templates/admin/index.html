@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+  {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+    <div class="hrefs">
+        <div class="adminbuttonarea"><a href="http://survey.vost-tech.ru//xls" class="button20">импорт</a></div>
+        <div class="adminbuttonarea"><a href="http://survey.vost-tech.ru//export" class="button20">экспорт</a></div>
+    
+    </div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}
